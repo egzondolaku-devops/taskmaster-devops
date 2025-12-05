@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taskmaster</title>
+</head>
+<body>
+    <h1>My Tasks</h1>
+    <ul id="tasklist"></ul>
+
+    <script>
+        fetch('http://localhost:5000/tasks')
+        .then(response => response.json())
+        .then(tasks => {
+            const list = document.getElementById('tasklist');
+            tasks.forEach(task => {
+                const listItem = document.createElement('li');
+                listItem.textContent = task.title + (task.completed ? ' (Completed)' : '');
+                list.appendChild(listItem);
+            });
+        })
+        .catch(error => {
+            console.log("Error:", error);
+        });
+    </script>
+</body>
+</html>
