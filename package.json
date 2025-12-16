@@ -21,8 +21,8 @@
     "url": "https://github.com/egzondolaku-devops/taskmaster-devops/issues"
   },
   "homepage": "https://github.com/egzondolaku-devops/taskmaster-devops#readme",
-  
   "devDependencies": {
-    "@playwright/test": "^1.57.0"
+    "@playwright/test": "^1.57.0",
+    "playwright": "^1.57.0"
   }
 }
