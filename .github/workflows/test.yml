@@ -1,5 +1,4 @@
 name: Run All Tests
-
 on:
   push:
     branches:
@@ -11,43 +10,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      
       - name: Checkout code
         uses: actions/checkout@v3
 
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
+      
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      
       - name: Run Backend Tests (Pytest)
         run: pytest
 
+      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      
       - name: Install Node dependencies
         run: npm install
 
+      
       - name: Install Playwright Browsers
-        run: npm run install-playwright
+        run: npx playwright install chromium --with-deps
 
-      - name: Start Flask Server
+      
+      - name: Start Flask Server in background
         run: |
-          nohup python app.py &
+          python app.py &
           sleep 5
 
+      
       - name: Run Frontend Tests (Playwright)
-        run: npx playwright test tests-frontend/
+        run: npx playwright test --project=chromium
 
-      - name: Install Newman
-        run: npm install -g newman
-
+      
       - name: Run API Tests (Newman)
-        run: newman run "Taskmaster API.postman_collection.json"
+        run: npx newman run "Taskmaster API.postman_collection.json"
