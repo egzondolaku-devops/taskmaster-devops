@@ -30,7 +30,7 @@ test('Add a task', async ({ page }) => {
   await page.waitForTimeout(300);
 
   
-  await expect(page.locator('li').first()).toContainText('Städa');
+  await expect(page.locator('li').first()).toContainText('Clean');
 });
 
 test('Mark task as completed', async ({ page }) => {
