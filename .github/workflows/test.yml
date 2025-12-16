@@ -52,8 +52,8 @@ jobs:
 
       
       - name: Run Frontend Tests (Playwright)
-        run: npx playwright test --project=chromium
+        run: npx playwright test
 
-      
+
       - name: Run API Tests (Newman)
         run: npx newman run "Taskmaster API.postman_collection.json"
