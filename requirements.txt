@@ -7,4 +7,3 @@ MarkupSafe==3.0.3
 Werkzeug==3.1.4
 flask-cors==4.0.0
 pytest
-newman
