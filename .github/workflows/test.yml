@@ -50,7 +50,12 @@ jobs:
           python app.py &
           sleep 5
 
-      
+      - name: Serve frontend files
+        run: |
+          npx serve frontend -l 5500 &
+          sleep 3          
+
+          
       - name: Run Frontend Tests (Playwright)
         run: npx playwright test
 
