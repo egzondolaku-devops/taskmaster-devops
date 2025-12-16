@@ -59,3 +59,12 @@ def test_delete_task():
         assert delete_response.status_code == 200
         data = delete_response.get_json()
         assert data['message'] == "Task deleted"
+
+def test_get_tasks_return_list():
+    with app.test_client() as client:
+        response = client.get('/tasks')
+        assert response.status_code == 200
+        data = response.get_json()
+        assert isinstance(data, list)
+
+        
