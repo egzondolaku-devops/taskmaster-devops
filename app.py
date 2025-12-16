@@ -3,7 +3,7 @@ import json
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS
+CORS(app) #
 
 def load_tasks():
     try:

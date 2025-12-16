@@ -1,0 +1,28 @@
+{
+  "name": "taskmaster-devops",
+  "version": "1.0.0",
+  "description": "Inlämningsuppgift: DevOps Pipeline med testning av fullstack-applikation",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egzondolaku-devops/taskmaster-devops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/egzondolaku-devops/taskmaster-devops/issues"
+  },
+  "homepage": "https://github.com/egzondolaku-devops/taskmaster-devops#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "playwright": "^1.57.0"
+  }
+}

@@ -1,8 +1,15 @@
 [
   {
     "id": 1,
-    "title": "Clean room",
+    "title": "Clean your room",
     "description": "Vaccum",
+    "completed": false,
+    "due_date": ""
+  },
+  {
+    "id": 2,
+    "title": "CLEAN YOUR ROOM",
+    "description": "Make the bed",
     "completed": false,
     "due_date": ""
   }
