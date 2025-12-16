@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/frontend/index.html');
+  await page.goto(`file://${process.cwd()}/frontend/index.html`);
   
   
   const deleteButtons = page.locator('button:has-text("Delete")');
@@ -15,12 +15,12 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Page loads without crashing', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/frontend/index.html');
+  await page.goto(`file://${process.cwd()}/frontend/index.html`);
   await expect(page).toHaveTitle(/Task/i); 
 });
 
 test('Add a task', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/frontend/index.html');
+  await page.goto(`file://${process.cwd()}/frontend/index.html`);
 
   await page.fill('#title', 'Clean');
   await page.fill('#description', 'Vaccum the room');
@@ -34,7 +34,7 @@ test('Add a task', async ({ page }) => {
 });
 
 test('Mark task as completed', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/frontend/index.html');
+  await page.goto(`file://${process.cwd()}/frontend/index.html`);
 
  
   await page.fill('#title', 'Test task');
@@ -50,7 +50,7 @@ test('Mark task as completed', async ({ page }) => {
 });
 
 test('Delete a task', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/frontend/index.html');
+  await page.goto(`file://${process.cwd()}/frontend/index.html`);
 
   
   await page.fill('#title', 'Task to delete');
@@ -69,7 +69,7 @@ test('Delete a task', async ({ page }) => {
 });
 
 test('Do not allow empty task', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/frontend/index.html');
+  await page.goto(`file://${process.cwd()}/frontend/index.html`);
 
   
   await page.click('#taskForm button');
