@@ -12,5 +12,19 @@
     "description": "Make the bed",
     "completed": false,
     "due_date": ""
+  },
+  {
+    "id": 3,
+    "title": "Test Task",
+    "description": "This is a test task",
+    "completed": false,
+    "due_date": ""
+  },
+  {
+    "id": 4,
+    "title": "Updated Task",
+    "description": "This task has been updated",
+    "completed": true,
+    "due_date": "2025-12-02"
   }
 ]
