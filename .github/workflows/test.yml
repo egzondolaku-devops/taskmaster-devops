@@ -42,7 +42,7 @@ jobs:
 
       
       - name: Install Playwright Browsers
-        run: sudo npx playwright install --with-deps
+        run: npx playwright install --with-deps
 
       
       - name: Start Flask Server in background
